@@ -1,0 +1,130 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "images/cstlogo128.png",
+         "16": "images/cstlogo16.png",
+         "32": "images/cstlogo32.png",
+         "48": "images/cstlogo48.png"
+      },
+      "default_popup": "index.html?page=popup"
+   },
+   "background": {
+      "service_worker": "js/backgroundScripts/background.bundle.js",
+      "type": "module"
+   },
+   "content_scripts": [ {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/inventory.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/*/inventory", "*://steamcommunity.com/*/inventory/*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/tradeOffer.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/tradeoffer/*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/tradeOffers.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/*/tradeoffers*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/marketListing.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/market/listings/*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/profile.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/id/*/*", "*://steamcommunity.com/id/*", "*://steamcommunity.com/profiles/*/*", "*://steamcommunity.com/profiles/*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/group.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/groups/*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/sharedFile.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/sharedfiles/filedetails/*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/webChat.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/chat/*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/apiKey.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/dev/apikey*", "*://steamcommunity.com/dev/registerkey*", "*://steamcommunity.com/dev/revokekey*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/discussions.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/groups/*/discussions/*", "*://steamcommunity.com/app/*/discussions/*", "*://steamcommunity.com/app/*/tradingforum/*", "*://steamcommunity.com/app/*/eventcomments/*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/openIDLogin.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/openid/login*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/friends.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/id/*/friends*", "*://steamcommunity.com/profiles/*/friends*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/market.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/market/", "*://steamcommunity.com/market" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/marketSearch.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/market/search*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/generalCSTStyle.css" ],
+      "js": [ "js/contentScripts/steam/tradeHistory.bundle.js" ],
+      "matches": [ "*://steamcommunity.com/id/*/inventoryhistory*", "*://steamcommunity.com/id/*/tradehistory*" ],
+      "run_at": "document_idle"
+   }, {
+      "js": [ "js/contentScripts/tradersBump.bundle.js" ],
+      "matches": [ "*://csgotraders.net/mytrades*" ],
+      "run_at": "document_idle"
+   }, {
+      "js": [ "js/contentScripts/tradersAutoLogin.bundle.js" ],
+      "matches": [ "*://csgotraders.net/*" ],
+      "run_at": "document_idle"
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+   },
+   "default_locale": "en",
+   "description": "__MSG_application_description__",
+   "homepage_url": "https://cs2trader.app/",
+   "host_permissions": [ "*://steamcommunity.com/*", "*://api.steampowered.com/*", "*://api.csgotrader.app/*", "*://prices.csgotrader.app/*" ],
+   "icons": {
+      "128": "images/cstlogo128.png",
+      "16": "images/cstlogo16.png",
+      "32": "images/cstlogo32.png",
+      "48": "images/cstlogo48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAycJXpmt94FIYH7+OVQswE8ZLWTqmNt3VePgk3IkOVP9QtEvXAcSNvtldqWCH3kFikAJzyeXdUM/puDOwZ4yM0KMgDbhfragLcB9j14VP2i3f3F98utOrRrl0eUAHFJ2fP2yCFbPqOiRZA9JK2jotpHhHib+lO2hLEtAbpnvMhD+TdIuPr33QEJcLkAfqCLZKrFGzqsOV+5NCkLQYfptA9v1KersX8FfFSDRmuzWipfo8EEwJDTcImau4v0YB+lZulHodxv5INt4Xp0Iq/lOgdm/6xUVdhZ3ISyjSvjLWVwstd1UMlLNxyBA9ibpc5UpkXDuPmkd77S2qVyMgsGtEPQIDAQAB",
+   "manifest_version": 3,
+   "minimum_chrome_version": "109",
+   "name": "__MSG_application_title__",
+   "optional_host_permissions": [ "*://csgotraders.net/*", "*://discord.com/*" ],
+   "optional_permissions": [ "tabs" ],
+   "options_page": "index.html",
+   "permissions": [ "storage", "notifications", "alarms", "unlimitedStorage", "offscreen" ],
+   "short_name": "CS2 Trader",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.5.3",
+   "web_accessible_resources": [ {
+      "matches": [ "*://steamcommunity.com/*" ],
+      "resources": [ "images/*" ]
+   }, {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "sound/notification/*", "js/injectToPage/*" ]
+   } ]
+}
